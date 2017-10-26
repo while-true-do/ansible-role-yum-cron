@@ -1,0 +1,37 @@
+---
+- name: Install yum-cron
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ yum_cron_packages }}"
+  notify: Enable and Start yum-cron
+  tags:
+    - yum
+    - cron
+    - package-manager
+
+- name: Configure yum-cron.conf
+  template:
+    src: yum-cron.conf.j2
+    dest: /etc/yum/yum-cron.conf
+    owner: root
+    group: root
+    mode: 0644i
+  notify: Restart yum-cron
+  tags:
+    - yum
+    - cron
+    - config
+
+- name: Configure yum-cron-hourly.conf
+  template:
+    src: yum-cron-hourly.conf.j2
+    dest: /etc/yum/yum-cron-hourly.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: Restart yum-cron
+  tags:
+    - yum
+    - cron
+    - config

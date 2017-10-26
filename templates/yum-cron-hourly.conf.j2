@@ -1,0 +1,27 @@
+# {{ ansible_managed }}
+[commands]
+update_cmd = {{ yum_cron_hourly_update_cmd }}
+update_messages = {{ yum_cron_hourly_update_messages }}
+download_updates = {{ yum_cron_hourly_download_updates }}
+apply_updates = {{ yum_cron_hourly_apply_updates }}
+random_sleep = {{ yum_cron_hourly_random_sleep }}
+
+[emitters]
+system_name = {{ yum_cron_system_name }}
+emit_via = {{ yum_cron_hourly_emit_via }}
+output_width = {{ yum_cron_hourly_output_width }}
+
+[email]
+email_from = {{ yum_cron_email_from }}
+email_to = {{ yum_cron_email_to }}
+email_host = {{ yum_cron_email_host }}
+
+[groups]
+group_list = {{ yum_cron_group_list }}
+group_package_types = {{ yum_cron_group_package_types }}
+
+[base]
+debuglevel = {{ yum_cron_debuglevel }}
+skip_broken = {{ yum_cron_skip_broken }}
+mdpolicy = {{ yum_cron_mdpolicy }}
+assumeyes = {{ yum_cron_assumeyes }}

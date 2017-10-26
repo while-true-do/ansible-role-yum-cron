@@ -1,0 +1,11 @@
+---
+- name: Enable and Start yum-cron
+  service:
+    name: yum-cron
+    state: started
+    enabled: yes
+
+- name: Restart yum-cron
+  service: 
+    name: yum-cron
+    state: restarted
