@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/while-true-do/ansible-role-yum-cron.svg?branch=master)](https://travis-ci.org/while-true-do/ansible-role-yum-cron)
+
 # Ansible Role: yum-cron 
 | A role to install and configure yum-cron
 
