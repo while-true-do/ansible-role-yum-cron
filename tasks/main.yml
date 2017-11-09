@@ -16,7 +16,7 @@
     dest: /etc/yum/yum-cron.conf
     owner: root
     group: root
-    mode: 0644i
+    mode: 0644
   notify: Restart yum-cron
   tags:
     - yum
