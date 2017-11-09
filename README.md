@@ -19,7 +19,12 @@ git clone https://github.com/while-true-do/ansible-role-yum-cron.git while-true-
 
 ## Requirements
 
-None.
+YUM must be /will be installed, of course.
+Its a good idea to configure yum, first. 
+
+You will find an ansible role here:
+<https://galaxy.ansible.com/while-true-do/yum>
+<https://github.com/while-true-do/ansible-role-yum>
 
 ## Dependencies
 
