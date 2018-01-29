@@ -32,6 +32,9 @@ None.
 
 ## Role Variables
 
+CentOS does not support other update_cmd. Defaults must be used.
+- <https://www.centos.org/forums/viewtopic.php?f=47&t=51300>
+
 ```
 # defaults/main.yml
 

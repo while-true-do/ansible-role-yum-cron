@@ -17,7 +17,8 @@ yum_cron_skip_broken: 'False'
 yum_cron_assumeyes: 'False'
 
 # yum-cron.conf
-yum_cron_update_cmd: 'security'
+# CentOS does not support other update_cmd then defaults.
+yum_cron_update_cmd: 'defaults'
 yum_cron_update_messages: 'yes'
 yum_cron_download_updates: 'yes'
 yum_cron_apply_updates: 'no'
@@ -27,7 +28,8 @@ yum_cron_emit_via: 'stdio'
 yum_cron_output_width: '80'
 
 # yum-cron-hourly.conf
-yum_cron_hourly_update_cmd: 'security'
+# CentOS does not support other update_cmd then defaults.
+yum_cron_hourly_update_cmd: 'defaults'
 yum_cron_hourly_update_messages: 'no'
 yum_cron_hourly_download_updates: 'no'
 yum_cron_hourly_apply_updates: 'no'
