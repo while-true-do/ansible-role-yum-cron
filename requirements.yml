@@ -1,1 +1,3 @@
 ---
+# Install while-true-do.yum from galaxy
+- src: while-true-do.yum
