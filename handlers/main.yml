@@ -6,6 +6,6 @@
     enabled: yes
 
 - name: Restart yum-cron
-  service: 
+  service:
     name: yum-cron
     state: restarted

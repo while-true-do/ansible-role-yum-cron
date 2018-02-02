@@ -3,15 +3,19 @@
 # Ansible Role: yum-cron 
 | A role to install and configure yum-cron
 
+## Motivation
+
+Install and configure yum-cron to stay up to date.
+
 ## Installation
 
-Galaxy Link: <https://galaxy.ansible.com/while-true-do/yum-cron>
+Install from [Ansible Galaxy](https://galaxy.ansible.com/while-true-do/yum-cron)
 
 ```
 ansible-galaxy install while-true-do.yum-cron
 ```
 
-Github Link: <https://github.com/while-true-do/ansible-role-yum-cron>
+Install from [Github](https://github.com/while-true-do/ansible-role-yum-cron)
 
 ```
 git clone https://github.com/while-true-do/ansible-role-yum-cron.git while-true-do.yum-cron
@@ -26,9 +30,17 @@ You will find an ansible role here:
 <https://galaxy.ansible.com/while-true-do/yum>
 <https://github.com/while-true-do/ansible-role-yum>
 
+Used Modules:
+-   [package](http://docs.ansible.com/ansible/latest/package_module.html)
+-   [template](http://docs.ansible.com/ansible/latest/template_module.html)
+
 ## Dependencies
 
-None.
+-   [yum-role](https://github.com/while-true-do/ansible-role-yum)
+
+```
+ansible-galaxy install -r requirements.yml
+```
 
 ## Role Variables
 
@@ -38,43 +50,45 @@ CentOS does not support other update_cmd. Defaults must be used.
 ```
 # defaults/main.yml
 
----
 # yum-cron-configuration
-yum_cron_packages: [ 'yum-cron' ]
+wtd_yum_cron_packages: [ 'yum-cron' ]
 # yum-cron general settings
-yum_cron_system_name: 'None'
+wtd_yum_cron_system_name: 'None'
 
-yum_cron_email_from: 'root@localhost'
-yum_cron_email_to: 'root'
-yum_cron_email_host: 'localhost'
+wtd_yum_cron_email_from: 'root@localhost'
+wtd_yum_cron_email_to: 'root'
+wtd_yum_cron_email_host: 'localhost'
 
-yum_cron_group_list: 'None'
-yum_cron_group_package_types: 'mandatory, default'
+wtd_yum_cron_group_list: 'None'
+wtd_yum_cron_group_package_types: 'mandatory, default'
 
-yum_cron_debuglevel: '-2'
-yum_cron_mdpolicy: 'group:main'
-yum_cron_skip_broken: 'False'
-yum_cron_assumeyes: 'False'
+wtd_yum_cron_debuglevel: '-2'
+wtd_yum_cron_mdpolicy: 'group:main'
+wtd_yum_cron_skip_broken: 'False'
+wtd_yum_cron_assumeyes: 'False'
 
 # yum-cron.conf
-yum_cron_update_cmd: 'security'
-yum_cron_update_messages: 'yes'
-yum_cron_download_updates: 'yes'
-yum_cron_apply_updates: 'no'
-yum_cron_random_sleep: '360'
+# CentOS does not support other update_cmd then defaults.
+wtd_yum_cron_update_cmd: 'defaults'
+wtd_yum_cron_update_messages: 'yes'
+wtd_yum_cron_download_updates: 'yes'
+wtd_yum_cron_apply_updates: 'no'
+wtd_yum_cron_random_sleep: '360'
 
-yum_cron_emit_via: 'stdio'
-yum_cron_output_width: '80'
+wtd_yum_cron_emit_via: 'stdio'
+wtd_yum_cron_output_width: '80'
 
 # yum-cron-hourly.conf
-yum_cron_hourly_update_cmd: 'security'
-yum_cron_hourly_update_messages: 'no'
-yum_cron_hourly_download_updates: 'no'
-yum_cron_hourly_apply_updates: 'no'
-yum_cron_hourly_random_sleep: '15'
+# CentOS does not support other update_cmd then defaults.
+wtd_yum_cron_hourly_update_cmd: 'defaults'
+wtd_yum_cron_hourly_update_messages: 'no'
+wtd_yum_cron_hourly_download_updates: 'no'
+wtd_yum_cron_hourly_apply_updates: 'no'
+wtd_yum_cron_hourly_random_sleep: '15'
 
-yum_cron_hourly_emit_via: 'stdio'
-yum_cron_hourly_output_width: '80'
+wtd_yum_cron_hourly_emit_via: 'stdio'
+wtd_yum_cron_hourly_output_width: '80'
+
 ```
 
 ## Example Playbook
@@ -93,23 +107,37 @@ Advanced Example:
 # To enable E-Mail Notifications
 - hosts: servers 
   roles:
-    - { role: while-true-do.yum-cron, yum_cron_emit_via: 'email', yum_cron_email_to: 'mymail@example.com' }
+    - { role: while-true-do.yum-cron, wtd_yum_cron_emit_via: 'email', wtd_yum_cron_email_to: 'mymail@example.com' }
 ```
+
+## Testing
+
+All tests are located in [test directory](./tests/).
+
+Basic testing:
+
+```
+bash ./tests/test-spelling.sh
+bash ./tests/test-ansible.sh
+```
+
+
+## Contribute / Bugs
+
+Thank you so much for considering to contribute. Every contribution helps us.
+We are really happy, when somebody is joining the hard work. Please have a look 
+at the links first.
+
+-   [Contribution Guidelines](./docs/CONTRIBUTING.md)
+-   [Create an issue or Request](https://github.com/while-true-do/ansible-role-yum-cron/issues)
+-   [See who was contributing already](https://github.com/while-true-do/ansible-role-yum-cron/graphs/contributors)
 
 ## License
 
 This work is licensed under a [BSD License](https://opensource.org/licenses/BSD-3-Clause).
 
-## Contribute / Bugs
-
-**bug reports:** <https://github.com/while-true-do/ansible-role-yum-cron/issues>
-
-**contributers:** <https://github.com/while-true-do/ansible-role-yum-cron/graphs/contributors>
-
 ## Author Information
 
-**blog:** <https://blog.while-true-do.org>
+Blog: [blog.while-true-do.org](https://blog.while-true-do.org)
 
-**github:** <https://github.com/daniel-wtd>
-
-**contact:** [mail@while-true-do.org](mailto:mail@while-true-do.org)
+Mail: [hello@while-true-do.org](mailto:hello@while-true-do.org)
