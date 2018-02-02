@@ -27,8 +27,8 @@ install:
 
 # Run the tests
 script:
-  - chmod +x tests/test.sh
-  - tests/test.sh
+  - tests/test-ansible.sh
+  - tests/test-spelling.sh
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
