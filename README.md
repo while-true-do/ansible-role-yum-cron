@@ -36,7 +36,7 @@ Used Modules:
 
 ## Dependencies
 
--   [yum-role](https://github.com/while-true-do/ansible-role-yum)
+-   [while-true-do.yum](https://galaxy.ansible.com/while-true-do/yum/)
 
 ```
 ansible-galaxy install -r requirements.yml
