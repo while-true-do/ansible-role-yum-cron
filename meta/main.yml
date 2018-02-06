@@ -1,4 +1,4 @@
-dependencies: []
+dependencies: ['while-true-do.yum']
 
 galaxy_info:
   author: while-true-do.org

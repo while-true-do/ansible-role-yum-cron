@@ -36,7 +36,7 @@ Used Modules:
 
 ## Dependencies
 
--   [yum-role](https://github.com/while-true-do/ansible-role-yum)
+-   [while-true-do.yum](https://galaxy.ansible.com/while-true-do/yum/)
 
 ```
 ansible-galaxy install -r requirements.yml
@@ -44,7 +44,7 @@ ansible-galaxy install -r requirements.yml
 
 ## Role Variables
 
-CentOS does not support other update_cmd. Defaults must be used.
+CentOS does not support other update commands. Defaults must be used.
 - <https://www.centos.org/forums/viewtopic.php?f=47&t=51300>
 
 ```
