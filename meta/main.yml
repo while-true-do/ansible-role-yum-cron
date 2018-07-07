@@ -1,12 +1,11 @@
-dependencies: ['while-true-do.yum']
+dependencies: ['while_true_do.yum']
 
 galaxy_info:
   author: while-true-do.org
   description: A role to install and configure yum-cron.
   company: while-true-do.org
 
-  issue_tracker_url: https://github.com/while-true-do/ansible-role-yum-cron/issues
-  github_branch: master
+    github_branch: master
   license: BSD
 
   min_ansible_version: 2.0
