@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/while-true-do/ansible-role-yum-cron.svg?branch=master)](https://travis-ci.org/while-true-do/ansible-role-yum-cron)
 
-# Ansible Role: yum-cron 
+# Ansible Role: yum-cron
 | A role to install and configure yum-cron
 
 ## Motivation
@@ -24,7 +24,7 @@ git clone https://github.com/while-true-do/ansible-role-yum-cron.git while_true_
 ## Requirements
 
 YUM must be /will be installed, of course.
-Its a good idea to configure yum, first. 
+Its a good idea to configure yum, first.
 
 You will find an ansible role here:
 <https://galaxy.ansible.com/while_true_do/yum>
@@ -96,7 +96,7 @@ wtd_yum_cron_hourly_output_width: '80'
 Simple Example:
 
 ```
-- hosts: servers 
+- hosts: servers
   roles:
     - { role: while_true_do.yum-cron }
 ```
@@ -105,7 +105,7 @@ Advanced Example:
 
 ```
 # To enable E-Mail Notifications
-- hosts: servers 
+- hosts: servers
   roles:
     - { role: while_true_do.yum-cron, wtd_yum_cron_emit_via: 'email', wtd_yum_cron_email_to: 'mymail@example.com' }
 ```
@@ -125,7 +125,7 @@ bash ./tests/test-ansible.sh
 ## Contribute / Bugs
 
 Thank you so much for considering to contribute. Every contribution helps us.
-We are really happy, when somebody is joining the hard work. Please have a look 
+We are really happy, when somebody is joining the hard work. Please have a look
 at the links first.
 
 -   [Contribution Guidelines](./docs/CONTRIBUTING.md)
