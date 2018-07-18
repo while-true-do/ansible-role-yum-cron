@@ -1,6 +1,7 @@
 dependencies: ['while_true_do.yum']
 
 galaxy_info:
+  role_name: yum_cron
   author: while-true-do.org
   description: A role to install and configure yum-cron.
   company: while-true-do.org
