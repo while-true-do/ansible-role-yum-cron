@@ -1,29 +1,30 @@
 ---
-# TODO: Build better testing for multiple containers and os support
 language: python
-python: "2.7"
+python:
+  - "2.7"
+  - "3.6"
 
 sudo: false
 
-# Install ansible
+# Install python-pip
 addons:
   apt:
     packages:
     - python-pip
+    - aspell
+    - aspell-en
 
 install:
   # Install ansible
   - pip install ansible
   - pip install ansible-lint
+  - pip install ansible-review
 
   # Check ansible version
   - ansible --version
 
-  # Create ansible.cfg with correct roles_path
-  - printf '[defaults]\nroles_path=../' >ansible.cfg
-
   # Link github repo to ansible-galaxy name
-  - ln -s  $PWD ../while-true-do.yum-cron
+  - ln -s  $PWD ../while_true_do.yum_cron
 
 # Run the tests
 script:
@@ -33,4 +34,9 @@ script:
   - tests/test-spelling.sh
 
 notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  webhooks:
+    urls:
+      - https://galaxy.ansible.com/api/v1/notifications/
+    on_success: always
+    on_failure: never
+    on_pull_requests: false
