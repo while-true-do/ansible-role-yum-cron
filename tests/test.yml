@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - while_true_do.yum-cron
+    - while_true_do.yum_cron

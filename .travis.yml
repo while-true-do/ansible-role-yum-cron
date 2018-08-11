@@ -24,7 +24,7 @@ install:
   - ansible --version
 
   # Link github repo to ansible-galaxy name
-  - ln -s  $PWD ../while_true_do.yum-cron
+  - ln -s  $PWD ../while_true_do.yum_cron
 
 # Run the tests
 script:

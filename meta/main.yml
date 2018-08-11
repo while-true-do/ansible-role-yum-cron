@@ -1,4 +1,5 @@
-dependencies: ['while_true_do.yum']
+dependencies:
+  - while_true_do.yum
 
 galaxy_info:
   role_name: yum_cron

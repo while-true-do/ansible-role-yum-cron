@@ -9,7 +9,7 @@ Install and configure yum-cron to stay up to date.
 
 ## Installation
 
-Install from [Ansible Galaxy](https://galaxy.ansible.com/while_true_do/yum-cron)
+Install from [Ansible Galaxy](https://galaxy.ansible.com/while_true_do/yum_cron)
 
 ```
 ansible-galaxy install while_true_do.yum-cron
@@ -98,7 +98,7 @@ Simple Example:
 ```
 - hosts: servers
   roles:
-    - { role: while_true_do.yum-cron }
+    - { role: while_true_do.yum_cron }
 ```
 
 Advanced Example:
@@ -107,7 +107,7 @@ Advanced Example:
 # To enable E-Mail Notifications
 - hosts: servers
   roles:
-    - { role: while_true_do.yum-cron, wtd_yum_cron_emit_via: 'email', wtd_yum_cron_email_to: 'mymail@example.com' }
+    - { role: while_true_do.yum_cron, wtd_yum_cron_emit_via: 'email', wtd_yum_cron_email_to: 'mymail@example.com' }
 ```
 
 ## Testing
